@@ -9,9 +9,9 @@ RUN unzip /fakeSMTP-latest.zip
 RUN chmod 777 /fakeSMTP*.jar
 
 VOLUME /output
-EXPOSE 25
+EXPOSE 2525
 
 USER 1001
-ENTRYPOINT ["java","-jar","/fakeSMTP-2.0.jar","--background", "--output-dir", "/output", "--port", "25", "--start-server"]
+ENTRYPOINT ["java","-jar","/fakeSMTP-2.0.jar","--background", "--output-dir", "/output", "--port", "2525", "--start-server"]
 
 
