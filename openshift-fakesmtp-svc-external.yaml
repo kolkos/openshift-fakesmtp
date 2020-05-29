@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: openshift-fakesmtp-external
+  labels:
+    app: openshift-fakesmtp
+spec:
+  type: NodePort
+  ports:
+    - name: smtp
+      port: 2525
+      nodePort: 32525
+  selector:
+    app: openshift-fakesmtp
